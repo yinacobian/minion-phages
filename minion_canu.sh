@@ -13,3 +13,6 @@
 
 cat $1 | xargs -I{fileID} sh -c "/usr/local/canu-1.7.1/Linux-amd64/bin/canu -d $2/canu/{fileID}_assembly -p {fileID} genomeSize=$3 -nanopore-raw $2/P00_raw/{fileID}.fastq  gnuplotTested=true -correct -minReadLength=500"
 cat $1 | xargs -I{fileID} sh -c "/usr/local/canu-1.7.1/Linux-amd64/bin/canu -d $2/canu/{fileID}_assembly -p {fileID} genomeSize=$3 -nanopore-raw  $2/P00_raw/{fileID}.fastq gnuplotTested=true  -minReadLength=500"
+
+#change the min alignemnt lenght and reads overlap
+#/usr/local/canu-1.7.1/Linux-amd64/bin/canu -d test_assembly_barcode05 -p RB05 genomeSize=50000 -nanopore-raw P00_raw/run3-08272018-RB05-LB4.fastq -correct -minReadLength=100 -minOverlapLength=50 -gnuplotTested=true
